@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/math_bg">
+    
+    <RelativeLayout 
+        android:id="@+id/linlay_main_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#33676767">
+
+        <ImageButton
+            android:id="@+id/ibtn_calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/equals_icon"
+            android:contentDescription="@string/main_btn_calculate_desc"
+            android:onClick="onClickCalculate" />
+
+        <ImageButton
+            android:id="@+id/ibtn_add_mark_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="26dp"
+            android:background="@drawable/add_icon"
+            android:contentDescription="@string/main_btn_add_mark_item_desc"
+            android:onClick="onClickAddItem" />
+
+        <ImageButton
+            android:id="@+id/ibtn_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="26dp"
+            android:background="@drawable/quetion_icon"
+            android:contentDescription="@string/main_btn_help_desc"
+            android:onClick="onClickHelp" />
+        
+    </RelativeLayout>
+    
+	<ScrollView 
+	    android:id="@+id/scrv_main_mark_items"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_above="@id/linlay_main_controls">
+	    
+		<LinearLayout
+		    android:id="@+id/linlay_main_mark_items"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical">    
+		    
+			
+		</LinearLayout>	
+		
+	</ScrollView>
+		
+</RelativeLayout>

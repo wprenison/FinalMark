@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Final Mark</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="mark_item_name_hint">Item Name</string>
+    <string name="mark_item_del_desc">Delete Item</string>
+    <string name="mark_item_weighting_hint">Weight%</string>
+    <string name="mark_item_mark_hint">Mark% </string>
+    <string name="main_btn_add_mark_item_desc">Add a assesment</string>
+    <string name="main_btn_calculate_desc">Calculate</string>
+    <string name="main_btn_help_desc">Help</string>
+    <string name="help_txtv_step1">STEP 1 \n Use the plus button to add assessments to your calculation.</string>
+    <string name="help_txtv_step2">STEP 2 \nComplete the detials for each assessment you have added.</string>
+    <string name="help_txtv_step3">STEP 3 \nUse the equals button  to calculate your final mark.</string>
+    <string name="help_txtv_weighting">Weightings \nThe weighting attribute refers to how much an assessment counts towards your final mark. When all the assessment weightings are added together they must add up to a 100%</string>
+    <string name="help_txtv_mark">Marks \nThe mark attribute refers to the mark you scored for that assessment or you estimate there of.</string>
+    <string name="help_txtv_help">Help \nIf you ever need help again use the question mark button highlighted below.</string>
+    <string name="help_txtv_about">About \nThis app calculates your final mark given all assessments thier weightings and marks\n(either real or your estimate) \nThis application was created \nby Weylin Renison</string>
+    <string name="result_sheet_heading">Result Sheet</string>
+    <string name="help_title">Help</string>
+    <string name="result_sheet_title">Results</string>
+
+</resources>

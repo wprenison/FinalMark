@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+   	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/math_bg" >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	     >
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_step1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_step1"
+	        android:textSize="15sp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_step2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_step2"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_step3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_step3"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txt_help_weighting"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_weighting"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_mark"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_mark"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_help"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_help"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_about"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_about"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	
+	</LinearLayout>
+	
+</ScrollView>
