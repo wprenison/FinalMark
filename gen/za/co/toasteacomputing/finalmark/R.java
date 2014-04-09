@@ -28,10 +28,11 @@ public final class R {
         public static final int add_icon=0x7f020000;
         public static final int equals_icon=0x7f020001;
         public static final int final_mark_launcher_icon=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int math_bg=0x7f020004;
-        public static final int quetion_icon=0x7f020005;
-        public static final int thrash_can_future=0x7f020006;
+        public static final int final_mark_splash=0x7f020003;
+        public static final int final_mark_title_icon=0x7f020004;
+        public static final int perf_metal_bg=0x7f020005;
+        public static final int quetion_icon=0x7f020006;
+        public static final int thrash_can_future=0x7f020007;
     }
     public static final class id {
         public static final int action_settings=0x7f090014;
@@ -61,6 +62,7 @@ public final class R {
         public static final int activity_main=0x7f030001;
         public static final int activity_result_sheet=0x7f030002;
         public static final int mark_item=0x7f030003;
+        public static final int splash_screen=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+//An object class to dynamically inflate/create form elements for a mark item
 public class MarkItemView 
 {
 	private Context context;
@@ -24,6 +25,7 @@ public class MarkItemView
 	
 	private void init(int id)
 	{
+		//Creates view
 		LayoutInflater inflator = LayoutInflater.from(context);
 		this.view = inflator.inflate(R.layout.mark_item, null);
 		
@@ -35,6 +37,7 @@ public class MarkItemView
 		
 	}
 	
+	//Getter and setter methods for each attribute of the object
 	public int getViewId()
 	{
 		return viewId;

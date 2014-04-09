@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -22,7 +24,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);		
 		
-	}
+	}	
 	
 	//Round a value to x decimal places
 	public double round(int places, double value)
@@ -33,6 +35,8 @@ public class MainActivity extends Activity {
 	
 	public void onClickAddItem(View view)
 	{
+		//Finds the appropriate layout for the item to be added too, creates an object of the item
+		//Stores that obj in and arrayList for later referance and adds the view item to the layout
 		LinearLayout layout = (LinearLayout)findViewById(R.id.linlay_main_mark_items);
 		MarkItemView ItemView = new MarkItemView(getBaseContext(), markItemList.size());
 		markItemList.add(ItemView);

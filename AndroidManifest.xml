@@ -13,14 +13,21 @@
         android:icon="@drawable/final_mark_launcher_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!--Splash screen set as launching activity-->
         <activity
-            android:name="za.co.toasteacomputing.finalmark.MainActivity"
+            android:name="za.co.toasteacomputing.finalmark.ActivitySplash"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- Main activity -->
+        <activity
+            android:name="za.co.toasteacomputing.finalmark.MainActivity"
+            android:label="@string/app_name" >
         </activity>
         
         <activity android:label="@string/result_sheet_title" android:name="ActivityResults"/>

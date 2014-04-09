@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
    	android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/math_bg" >
+    android:background="@drawable/perf_metal_bg" >
 	<LinearLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
