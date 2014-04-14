@@ -21,5 +21,11 @@
     <string name="result_sheet_heading">Result Sheet</string>
     <string name="help_title">Help</string>
     <string name="result_sheet_title">Results</string>
+    <string name="mnui_save_txt">Save Template</string>
+    <string name="mnui_load_txt">Load Template</string>
+    <string name="dialog_save_etxt_file_name_hint">Template Name</string>
+    <string name="dialog_save_btn_cancel_desc">Cancel</string>
+    <string name="dialog_save_btn_save_desc">Save</string>
+    <string name="dialog_save_title">File Name?</string>
 
 </resources>

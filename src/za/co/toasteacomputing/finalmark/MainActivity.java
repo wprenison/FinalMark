@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import android.os.Bundle;
+import android.os.Environment;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -13,6 +14,11 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
 
 
 public class MainActivity extends Activity {
@@ -25,6 +31,14 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);		
 		
 	}	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		//Add menu to action bar
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 	
 	//Round a value to x decimal places
 	public double round(int places, double value)
@@ -76,6 +90,77 @@ public class MainActivity extends Activity {
 				MainActivity.this.startActivity(resultsIntent);
 				
 		}
+	}
+	
+	public void onClickSaveTemplate(MenuItem item)
+	{
+		if(validateItemsExist())
+		{
+			//Prompt for save file name
+			Intent saveIntent = new Intent(MainActivity.this, DialogSave.class);
+			MainActivity.this.startActivityForResult(saveIntent, 1);
+		}
+		else
+			Toast.makeText(this, "You have not added any items to save into the template.", Toast.LENGTH_LONG).show();
+	}
+	
+	public void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if(requestCode == 1)
+		{
+			if(resultCode == RESULT_OK)
+			{
+				String fileName = data.getStringExtra("file_name");
+				
+				try
+				{
+					//Gets appropriate directory for writing of file
+					File pubDirFile = new File(Environment.getExternalStorageDirectory(), "/Final Mark Templates");
+
+					//Checks if the base directory already exists if not it creates it
+					if(!pubDirFile.isDirectory())
+					{
+						if(!pubDirFile.mkdir())
+							Toast.makeText(this, "Directory could not be created!", Toast.LENGTH_LONG).show();
+					}
+					
+					//Creates actual file to write too
+					File oFile = new File(pubDirFile, fileName + ".txt");
+					
+					//Writes template to file
+					FileOutputStream fOut = new FileOutputStream(oFile);
+					OutputStreamWriter writer = new OutputStreamWriter(fOut);
+					
+					for(int i = 0; i < markItemList.size(); i++)
+					{
+						writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + ",");
+						writer.flush();
+					}
+					
+					writer.close();
+					
+					Toast.makeText(this, "Template Saved!", Toast.LENGTH_LONG).show();
+				}
+				catch(IOException ioe)
+				{
+					ioe.printStackTrace();
+				}
+			}
+			else if(resultCode == RESULT_CANCELED)
+				Toast.makeText(this, "Template Save was canceled", Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	public boolean validateItemsExist()
+	{
+		boolean itemsExist = false;
+		
+		if(!markItemList.isEmpty())
+		{
+			itemsExist = true;
+		}
+		
+		return itemsExist;
 	}
 	
 	public boolean validateInputs()

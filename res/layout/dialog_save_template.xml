@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <EditText 
+        android:id="@+id/etxt_save_file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/dialog_save_etxt_file_name_hint"
+        android:inputType="textUri"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle">
+        
+        <Button 
+            android:id="@+id/btn_save_template_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dialog_save_btn_cancel_desc"
+            android:onClick="onClickCancel"
+            style="?android:attr/buttonBarButtonStyle"/>
+        
+        <View
+            android:id="@+id/divCancelSave"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:background="?android:attr/dividerVertical"
+            />
+        
+        <Button 
+            android:id="@+id/btn_save_template_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dialog_save_btn_save_desc"
+            android:onClick="onClickSave"
+            style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+        
+
+</LinearLayout>

@@ -65,9 +65,19 @@ public class MarkItemView
 		return etxtName;
 	}
 	
+	public String getName()
+	{
+		return etxtName.getText().toString();
+	}
+	
 	public void setEtxtWeighting(EditText weighting)
 	{
 		this.etxtWeighting = weighting;
+	}
+	
+	public String getWeighting()
+	{
+		return etxtWeighting.getText().toString();
 	}
 	
 	public EditText getEtxtWeighting()
