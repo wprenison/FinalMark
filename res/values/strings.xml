@@ -27,5 +27,6 @@
     <string name="dialog_save_btn_cancel_desc">Cancel</string>
     <string name="dialog_save_btn_save_desc">Save</string>
     <string name="dialog_save_title">File Name?</string>
+    <string name="dialog_load_title">Which File To Load?</string>
 
 </resources>

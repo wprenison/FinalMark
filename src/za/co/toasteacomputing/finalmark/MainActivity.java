@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -94,6 +96,7 @@ public class MainActivity extends Activity {
 	
 	public void onClickSaveTemplate(MenuItem item)
 	{
+		//Validates that items exist and appropriate validation for a save template. eg all validation except for the mark of an item
 		if(validateItemsExist())
 		{
 			//Prompt for save file name
@@ -104,6 +107,13 @@ public class MainActivity extends Activity {
 			Toast.makeText(this, "You have not added any items to save into the template.", Toast.LENGTH_LONG).show();
 	}
 	
+	public void onClickLoadTemplate(MenuItem item)
+	{
+		//Call load dialog
+		Intent loadIntent = new Intent(MainActivity.this, DialogLoad.class);
+		MainActivity.this.startActivityForResult(loadIntent, 2);
+	}
+	
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 		if(requestCode == 1)
@@ -112,8 +122,7 @@ public class MainActivity extends Activity {
 			{
 				String fileName = data.getStringExtra("file_name");
 				
-				try
-				{
+				
 					//Gets appropriate directory for writing of file
 					File pubDirFile = new File(Environment.getExternalStorageDirectory(), "/Final Mark Templates");
 
@@ -125,30 +134,95 @@ public class MainActivity extends Activity {
 					}
 					
 					//Creates actual file to write too
-					File oFile = new File(pubDirFile, fileName + ".txt");
+					final File oFile = new File(pubDirFile, fileName + ".txt");
 					
-					//Writes template to file
-					FileOutputStream fOut = new FileOutputStream(oFile);
-					OutputStreamWriter writer = new OutputStreamWriter(fOut);
-					
-					for(int i = 0; i < markItemList.size(); i++)
+					//Checks if template already exists
+					if(oFile.exists())
 					{
-						writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + ",");
-						writer.flush();
+						//Display dialog to find out if user would like to overwrite the existing template
+						AlertDialog.Builder builder = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_DARK);
+						builder.setTitle("Overwrite Confirm");
+						builder.setMessage("A Template with that name already exists. Would you like to replace it?");
+						
+						builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) 
+							{
+								// TODO Auto-generated method stub
+								try
+								{
+									//Writes template to file
+									FileOutputStream fOut = new FileOutputStream(oFile);
+									OutputStreamWriter writer = new OutputStreamWriter(fOut);
+									
+									writeTemplate(writer);
+									dialog.dismiss();
+								}
+								catch(IOException ioe)
+								{
+									ioe.printStackTrace();
+								}
+							}
+						});
+						
+						builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) 
+							{
+								// TODO Auto-generated method stub
+								dialog.dismiss();
+							}
+						});
+						
+						//Call created dialog
+						AlertDialog alert = builder.create();
+						alert.show();
+					}
+					else
+					{
+						try
+						{
+							//Writes template to file
+							FileOutputStream fOut = new FileOutputStream(oFile);
+							OutputStreamWriter writer = new OutputStreamWriter(fOut);
+							
+							writeTemplate(writer);
+						}
+						catch(IOException ioe)
+						{
+							ioe.printStackTrace();
+						}
 					}
 					
-					writer.close();
 					
-					Toast.makeText(this, "Template Saved!", Toast.LENGTH_LONG).show();
-				}
-				catch(IOException ioe)
-				{
-					ioe.printStackTrace();
-				}
 			}
 			else if(resultCode == RESULT_CANCELED)
 				Toast.makeText(this, "Template Save was canceled", Toast.LENGTH_LONG).show();
+			
 		}
+		else if(requestCode == 2)
+		{
+			if(resultCode == RESULT_OK)
+			{
+				//Get load template path string
+				String loadPath = data.getStringExtra("loadPath");
+				Toast.makeText(this, "Awe nigga the load path is: " + loadPath, Toast.LENGTH_LONG).show();
+			}
+			else if(resultCode == RESULT_CANCELED)
+			{
+				Toast.makeText(this, "Template Load was canceled", Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+	
+	public void loadTemplate(String loadPath)
+	{
+		//flushes markItemsList array list of any old values that it may have contained
+		markItemList.clear();
+		
+		
 	}
 	
 	public boolean validateItemsExist()
@@ -163,8 +237,31 @@ public class MainActivity extends Activity {
 		return itemsExist;
 	}
 	
+	//Used to create and write a template file
+	public void writeTemplate(OutputStreamWriter writer)
+	{
+		
+		try
+		{
+			for(int i = 0; i < markItemList.size(); i++)
+			{
+				writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + ",");
+				writer.flush();
+			}
+			
+			writer.close();
+			
+			Toast.makeText(this, "Template Saved!", Toast.LENGTH_LONG).show();
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+	
 	public boolean validateInputs()
 	{
+		//Bool param is only to modify this validate methode to only validate requirements to save a tamplate
 		boolean valid = true;
 		String errorMsgs = "";
 		
@@ -237,6 +334,7 @@ public class MainActivity extends Activity {
 					totWeighting = totWeighting + Double.parseDouble(weighting);
 			}
 			
+			
 			if(mark.isEmpty())
 			{
 				//Checks if items has name for use in error msg else use generic name referance
@@ -264,7 +362,7 @@ public class MainActivity extends Activity {
 					{
 						errorMsgs = errorMsgs + "Mark specified for " + name + " is more than 100%\n";
 					}
-					
+						
 					valid = false;
 				}
 				else if(Double.parseDouble(mark) < 1)
@@ -278,11 +376,12 @@ public class MainActivity extends Activity {
 					{
 						errorMsgs = errorMsgs + "Mark specified for " + name + " is less than 1%\n";
 					}
-					
-					valid = false;
+				
+						valid = false;
 				}
 			}
 		}
+		
 		
 		//final validation check, checks weighting adds up to a 100%
 		if(totWeighting != 100)

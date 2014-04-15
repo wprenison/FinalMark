@@ -66,9 +66,10 @@ public final class R {
         public static final int activity_help=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_result_sheet=0x7f030002;
-        public static final int dialog_save_template=0x7f030003;
-        public static final int mark_item=0x7f030004;
-        public static final int splash_screen=0x7f030005;
+        public static final int dialog_load_template=0x7f030003;
+        public static final int dialog_save_template=0x7f030004;
+        public static final int mark_item=0x7f030005;
+        public static final int splash_screen=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -76,6 +77,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int dialog_load_title=0x7f06001a;
         public static final int dialog_save_btn_cancel_desc=0x7f060017;
         public static final int dialog_save_btn_save_desc=0x7f060018;
         public static final int dialog_save_etxt_file_name_hint=0x7f060016;

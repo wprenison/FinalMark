@@ -35,6 +35,7 @@
         <activity android:label="@string/result_sheet_title" android:name="ActivityResults"/>
         <activity android:label="@string/help_title" android:name="ActivityHelp"/>
         <activity android:label="@string/dialog_save_title" android:name="DialogSave" android:theme="@android:style/Theme.Holo.Dialog"/>
+        <activity android:label="@string/dialog_load_title" android:name="DialogLoad" android:theme="@android:style/Theme.Holo.Dialog"/>
     </application>
 
 </manifest>
