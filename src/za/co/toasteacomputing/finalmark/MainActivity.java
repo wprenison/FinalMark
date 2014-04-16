@@ -46,12 +46,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	/*@Override
-	public void onConfigurationChanged(Configuration newConfig)
-	{
-		//Used to stop layouts from resseting when orientation is changed
-	}*/
-	
 	//Round a value to x decimal places
 	public double round(int places, double value)
 	{
