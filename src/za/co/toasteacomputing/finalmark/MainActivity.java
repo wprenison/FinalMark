@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,8 +18,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 
@@ -41,6 +45,12 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	/*@Override
+	public void onConfigurationChanged(Configuration newConfig)
+	{
+		//Used to stop layouts from resseting when orientation is changed
+	}*/
 	
 	//Round a value to x decimal places
 	public double round(int places, double value)
@@ -208,7 +218,7 @@ public class MainActivity extends Activity {
 			{
 				//Get load template path string
 				String loadPath = data.getStringExtra("loadPath");
-				Toast.makeText(this, "Awe nigga the load path is: " + loadPath, Toast.LENGTH_LONG).show();
+				loadTemplate(loadPath);
 			}
 			else if(resultCode == RESULT_CANCELED)
 			{
@@ -219,10 +229,50 @@ public class MainActivity extends Activity {
 	
 	public void loadTemplate(String loadPath)
 	{
-		//flushes markItemsList array list of any old values that it may have contained
+		//Variables used to add read item to activity/layout
+		LinearLayout layout = (LinearLayout)findViewById(R.id.linlay_main_mark_items);
+		MarkItemView ItemView;
+		
+		//flushes markItemsList array list of any old values that it may have contained does the same for the layout
 		markItemList.clear();
+		layout.removeAllViews();
 		
+		//Variables for reading file		
+		String line = null;
+		String [] markItemDetails = new String[2];
+		File loadFile = new File(loadPath);
+		FileInputStream fins;
+		InputStreamReader insr;
+		BufferedReader buffReader;	
 		
+		try
+		{
+			fins = new FileInputStream(loadFile);
+			insr = new InputStreamReader(fins);
+			buffReader = new BufferedReader(insr);
+			
+			//Read each line in file, split the details into and array which is used to populate attributes of an markItemView
+			//obj which is then used to add the loaded views to the layout and arrayList of markItemView objs for later referance
+			while((line = buffReader.readLine()) != null)
+			{
+				markItemDetails = line.split(",");
+				ItemView = new MarkItemView(getBaseContext(), markItemList.size());
+				ItemView.getEtxtName().setText(markItemDetails[0]);
+				ItemView.getEtxtWeighting().setText(markItemDetails[1]);
+				markItemList.add(ItemView);
+				layout.addView(ItemView.getView());
+			}
+			
+			fins.close();
+			insr.close();
+			buffReader.close();
+			
+			Toast.makeText(this, "Template Loaded!", Toast.LENGTH_LONG).show();
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
 	}
 	
 	public boolean validateItemsExist()
@@ -245,7 +295,7 @@ public class MainActivity extends Activity {
 		{
 			for(int i = 0; i < markItemList.size(); i++)
 			{
-				writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + ",");
+				writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + "\n");
 				writer.flush();
 			}
 			
