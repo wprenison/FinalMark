@@ -1,9 +1,11 @@
 package za.co.toasteacomputing.finalmark;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 public class DialogSave extends Activity
@@ -26,6 +28,10 @@ public class DialogSave extends Activity
 		Intent intent = this.getIntent();
 		intent.putExtra("file_name", fileName);
 		setResult(RESULT_OK, intent);
+		
+		//Hides keyboard when save is clicked
+		InputMethodManager inmman = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		inmman.hideSoftInputFromWindow(etxtFileName.getWindowToken(), 0);
 		
 		finish();
 	}

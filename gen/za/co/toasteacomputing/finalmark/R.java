@@ -77,31 +77,30 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int dialog_load_title=0x7f06001a;
-        public static final int dialog_save_btn_cancel_desc=0x7f060017;
-        public static final int dialog_save_btn_save_desc=0x7f060018;
-        public static final int dialog_save_etxt_file_name_hint=0x7f060016;
-        public static final int dialog_save_title=0x7f060019;
-        public static final int hello_world=0x7f060002;
-        public static final int help_title=0x7f060012;
-        public static final int help_txtv_about=0x7f060010;
-        public static final int help_txtv_help=0x7f06000f;
-        public static final int help_txtv_mark=0x7f06000e;
-        public static final int help_txtv_step1=0x7f06000a;
-        public static final int help_txtv_step2=0x7f06000b;
-        public static final int help_txtv_step3=0x7f06000c;
-        public static final int help_txtv_weighting=0x7f06000d;
-        public static final int main_btn_add_mark_item_desc=0x7f060007;
-        public static final int main_btn_calculate_desc=0x7f060008;
-        public static final int main_btn_help_desc=0x7f060009;
-        public static final int mark_item_del_desc=0x7f060004;
-        public static final int mark_item_mark_hint=0x7f060006;
-        public static final int mark_item_name_hint=0x7f060003;
-        public static final int mark_item_weighting_hint=0x7f060005;
-        public static final int mnui_load_txt=0x7f060015;
-        public static final int mnui_save_txt=0x7f060014;
-        public static final int result_sheet_heading=0x7f060011;
-        public static final int result_sheet_title=0x7f060013;
+        public static final int dialog_load_title=0x7f060019;
+        public static final int dialog_save_btn_cancel_desc=0x7f060016;
+        public static final int dialog_save_btn_save_desc=0x7f060017;
+        public static final int dialog_save_etxt_file_name_hint=0x7f060015;
+        public static final int dialog_save_title=0x7f060018;
+        public static final int help_title=0x7f060011;
+        public static final int help_txtv_about=0x7f06000f;
+        public static final int help_txtv_help=0x7f06000e;
+        public static final int help_txtv_mark=0x7f06000d;
+        public static final int help_txtv_step1=0x7f060009;
+        public static final int help_txtv_step2=0x7f06000a;
+        public static final int help_txtv_step3=0x7f06000b;
+        public static final int help_txtv_weighting=0x7f06000c;
+        public static final int main_btn_add_mark_item_desc=0x7f060006;
+        public static final int main_btn_calculate_desc=0x7f060007;
+        public static final int main_btn_help_desc=0x7f060008;
+        public static final int mark_item_del_desc=0x7f060003;
+        public static final int mark_item_mark_hint=0x7f060005;
+        public static final int mark_item_name_hint=0x7f060002;
+        public static final int mark_item_weighting_hint=0x7f060004;
+        public static final int mnui_load_txt=0x7f060014;
+        public static final int mnui_save_txt=0x7f060013;
+        public static final int result_sheet_heading=0x7f060010;
+        public static final int result_sheet_title=0x7f060012;
     }
     public static final class style {
         /** 
