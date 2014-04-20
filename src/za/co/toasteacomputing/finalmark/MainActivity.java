@@ -113,8 +113,16 @@ public class MainActivity extends Activity {
 	public void onClickLoadTemplate(MenuItem item)
 	{
 		//Call load dialog
-		Intent loadIntent = new Intent(MainActivity.this, DialogLoad.class);
+		Intent loadIntent = new Intent(MainActivity.this, DialogLoadorDel.class);
+		loadIntent.putExtra("loadOrDel", "load");
 		MainActivity.this.startActivityForResult(loadIntent, 2);
+	}
+	
+	public void onClickDelTemplate(MenuItem item)
+	{
+		Intent delIntent = new Intent(MainActivity.this, DialogLoadorDel.class);
+		delIntent.putExtra("loadOrDel", "del");
+		MainActivity.this.startActivity(delIntent);
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -250,8 +258,11 @@ public class MainActivity extends Activity {
 			{
 				markItemDetails = line.split(",");
 				ItemView = new MarkItemView(getBaseContext(), markItemList.size());
-				ItemView.getEtxtName().setText(markItemDetails[0]);
-				ItemView.getEtxtWeighting().setText(markItemDetails[1]);
+				
+				if(!markItemDetails[0].equalsIgnoreCase("null"))
+					ItemView.getEtxtName().setText(markItemDetails[0]);
+				if(!markItemDetails[1].equalsIgnoreCase("null"))
+					ItemView.getEtxtWeighting().setText(markItemDetails[1]);
 				markItemList.add(ItemView);
 				layout.addView(ItemView.getView());
 			}
@@ -286,9 +297,25 @@ public class MainActivity extends Activity {
 		
 		try
 		{
+			//Holder vars
+			String name;
+			String weighting;
+			
 			for(int i = 0; i < markItemList.size(); i++)
 			{
-				writer.write(markItemList.get(i).getName() + "," + markItemList.get(i).getWeighting() + "\n");
+				name = markItemList.get(i).getName();
+				weighting = markItemList.get(i).getWeighting();
+				
+				if(name.equals(""))
+					writer.write("null,");
+				else
+					writer.write(name + ",");
+				
+				if(weighting.equals(""))
+					writer.write("null\n");
+				else
+					writer.write(weighting + "\n");
+				
 				writer.flush();
 			}
 			

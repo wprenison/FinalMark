@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="3"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
     
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -35,7 +35,7 @@
         <activity android:label="@string/result_sheet_title" android:name="ActivityResults"/>
         <activity android:label="@string/help_title" android:name="ActivityHelp"/>
         <activity android:label="@string/dialog_save_title" android:name="DialogSave" android:theme="@android:style/Theme.Holo.Dialog"/>
-        <activity android:label="@string/dialog_load_title" android:name="DialogLoad" android:theme="@android:style/Theme.Holo.Dialog"/>
+        <activity android:label="@string/dialog_load_title" android:name="DialogLoadorDel" android:theme="@android:style/Theme.Holo.Dialog"/>
     </application>
 
 </manifest>

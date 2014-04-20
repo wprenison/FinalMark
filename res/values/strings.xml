@@ -27,5 +27,12 @@
     <string name="dialog_save_btn_save_desc">Save</string>
     <string name="dialog_save_title">File Name?</string>
     <string name="dialog_load_title">Which File To Load?</string>
+    <string name="mnui_del_txt">Delete Template</string>
+    <string name="splash_img_logo_desc">App Logo</string>
+    <string name="splash_img_app_name_desc">App Name</string>
+    <string name="splash_txtv_available_txt">Premuim version available on these app markets</string>
+    <string name="splash_ibtn_amazon_desc">Amazon App Market</string>
+    <string name="splash_ibtn_slideme_desc">Slide Me App Market</string>
+    <string name="splash_ibtn_aptoid_desc">Aptoid App Market</string>
 
 </resources>

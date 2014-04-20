@@ -26,13 +26,17 @@ public final class R {
     }
     public static final class drawable {
         public static final int add_icon=0x7f020000;
-        public static final int equals_icon=0x7f020001;
-        public static final int final_mark_launcher_icon=0x7f020002;
-        public static final int final_mark_splash=0x7f020003;
-        public static final int final_mark_title_icon=0x7f020004;
-        public static final int perf_metal_bg=0x7f020005;
-        public static final int quetion_icon=0x7f020006;
-        public static final int thrash_can_future=0x7f020007;
+        public static final int amazon_logo=0x7f020001;
+        public static final int app_name=0x7f020002;
+        public static final int aptoid_icon=0x7f020003;
+        public static final int equals_icon=0x7f020004;
+        public static final int final_mark_launcher_icon=0x7f020005;
+        public static final int final_mark_splash=0x7f020006;
+        public static final int final_mark_title_icon=0x7f020007;
+        public static final int perf_metal_bg=0x7f020008;
+        public static final int quetion_icon=0x7f020009;
+        public static final int slideme_logo_icon=0x7f02000a;
+        public static final int thrash_can_future=0x7f02000b;
     }
     public static final class id {
         public static final int btn_save_template_cancel=0x7f090010;
@@ -49,9 +53,16 @@ public final class R {
         public static final int linlay_main_controls=0x7f090007;
         public static final int linlay_main_mark_items=0x7f09000c;
         public static final int linlay_mark_item=0x7f090013;
-        public static final int mnui_load=0x7f090019;
-        public static final int mnui_save=0x7f090018;
+        public static final int mnui_del=0x7f090020;
+        public static final int mnui_load=0x7f09001f;
+        public static final int mnui_save=0x7f09001e;
         public static final int scrv_main_mark_items=0x7f09000b;
+        public static final int splash_app_name=0x7f090019;
+        public static final int splash_ibtn_amazon=0x7f09001b;
+        public static final int splash_ibtn_apptoid=0x7f09001d;
+        public static final int splash_ibtn_slide=0x7f09001c;
+        public static final int splash_logo=0x7f090018;
+        public static final int splash_txtv_availble=0x7f09001a;
         public static final int txt_help_weighting=0x7f090003;
         public static final int txtv_help_about=0x7f090006;
         public static final int txtv_help_help=0x7f090005;
@@ -97,10 +108,17 @@ public final class R {
         public static final int mark_item_mark_hint=0x7f060005;
         public static final int mark_item_name_hint=0x7f060002;
         public static final int mark_item_weighting_hint=0x7f060004;
+        public static final int mnui_del_txt=0x7f06001a;
         public static final int mnui_load_txt=0x7f060014;
         public static final int mnui_save_txt=0x7f060013;
         public static final int result_sheet_heading=0x7f060010;
         public static final int result_sheet_title=0x7f060012;
+        public static final int splash_ibtn_amazon_desc=0x7f06001e;
+        public static final int splash_ibtn_aptoid_desc=0x7f060020;
+        public static final int splash_ibtn_slideme_desc=0x7f06001f;
+        public static final int splash_img_app_name_desc=0x7f06001c;
+        public static final int splash_img_logo_desc=0x7f06001b;
+        public static final int splash_txtv_available_txt=0x7f06001d;
     }
     public static final class style {
         /** 
