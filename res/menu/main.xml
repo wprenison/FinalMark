@@ -6,6 +6,7 @@
         android:title="@string/mnui_save_txt"
         android:onClick="onClickSaveTemplate"/>
     <item android:id="@+id/mnui_load" android:title="@string/mnui_load_txt" android:orderInCategory="100" android:onClick="onClickLoadTemplate"></item>
-    <item android:id="@+id/mnui_del" android:orderInCategory="100" android:title="@string/mnui_del_txt" android:onClick="onClickDelTemplate"></item>
+    <item android:id="@+id/mnui_del" android:title="@string/mnui_del_txt" android:onClick="onClickDelTemplate" android:orderInCategory="100"></item>
+    <item android:id="@+id/mnui_exit" android:title="Exit" android:onClick="onClickExit" android:orderInCategory="200"></item>
 
 </menu>

@@ -23,7 +23,7 @@
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/splash_img_app_name_desc"
         android:src="@drawable/app_name" />
-    
+  
     <TextView
         android:id="@+id/splash_txtv_availble"
         android:layout_width="wrap_content"
@@ -34,14 +34,16 @@
         android:text="@string/splash_txtv_available_txt"
         android:textColor="@color/hintGrey"
         android:textSize="20sp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:visibility="invisible" />
     
     <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="4"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="invisible">
         
         <ImageButton 
             android:id="@+id/splash_ibtn_amazon"
@@ -61,18 +63,18 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:contentDescription="@string/splash_ibtn_slideme_desc"
-            android:background="@drawable/slideme_logo_icon"/>
+            />
         
         <ImageButton 
-            android:id="@+id/splash_ibtn_apptoid"
+            android:id="@+id/splash_ibtn_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:contentDescription="@string/splash_ibtn_aptoid_desc"
-            android:background="@drawable/aptoid_icon"/>        
+            />        
         
     </LinearLayout>
-
+	
 </LinearLayout>

@@ -59,6 +59,36 @@
 	        android:layout_marginTop="25dp"/>
 	    
 	    <TextView 
+	        android:id="@+id/txtv_help_save"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_save"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_load"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_load"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
+	        android:id="@+id/txtv_help_del"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textColor="@color/fntBlue"
+	        android:text="@string/help_txtv_del"
+	        android:textSize="15sp"
+	        android:layout_marginTop="25dp"/>
+	    
+	    <TextView 
 	        android:id="@+id/txtv_help_help"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"

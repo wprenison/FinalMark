@@ -40,8 +40,29 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
+		//Add settings button
+				MenuItem mnuiClear = menu.add(0, 0, 0, "Clear");
+				{
+					mnuiClear.setTitle("Clear All");
+					mnuiClear.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+				}
+		
 		//Add menu to action bar
 		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		
+		int itemId = item.getItemId();	//get id of clicked action bar item		
+		
+		switch(itemId)
+		{
+			case 0:	onCreate(null);			
+					break;
+		}			
+		
 		return true;
 	}
 	
@@ -85,9 +106,9 @@ public class MainActivity extends Activity {
 				convertedMark = ((weighting/100) * (mark/100));
 				finalMark = finalMark + convertedMark;
 				
-				resultSheet = resultSheet + name + " => " + round(2,(convertedMark*100)) + "\n";
+				resultSheet = resultSheet + name + ": " + round(2,(convertedMark*100)) + "\n";
 			}
-				resultSheet = resultSheet + "\nFinal Mark => " + round(2, (finalMark*100));
+				resultSheet = resultSheet + "\nFinal Mark: " + round(2, (finalMark*100));
 				
 				//Output results
 				Intent resultsIntent = new Intent(MainActivity.this, ActivityResults.class);
@@ -95,6 +116,11 @@ public class MainActivity extends Activity {
 				MainActivity.this.startActivity(resultsIntent);
 				
 		}
+	}
+	
+	public void onClickExit(MenuItem item)
+	{
+		this.finishAffinity();
 	}
 	
 	public void onClickSaveTemplate(MenuItem item)
@@ -160,7 +186,7 @@ public class MainActivity extends Activity {
 							@Override
 							public void onClick(DialogInterface dialog, int which) 
 							{
-								// TODO Auto-generated method stub
+								
 								try
 								{
 									//Writes template to file
@@ -182,7 +208,7 @@ public class MainActivity extends Activity {
 							@Override
 							public void onClick(DialogInterface dialog, int which) 
 							{
-								// TODO Auto-generated method stub
+								
 								dialog.dismiss();
 							}
 						});

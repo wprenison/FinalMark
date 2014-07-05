@@ -15,8 +15,8 @@
     <string name="help_txtv_step3">STEP 3 \nUse the equals button  to calculate your final mark.</string>
     <string name="help_txtv_weighting">Weightings \nThe weighting attribute refers to how much an assessment counts towards your final mark. When all the assessment weightings are added together they must add up to a 100%</string>
     <string name="help_txtv_mark">Marks \nThe mark attribute refers to the mark you scored for that assessment or you estimate there of.</string>
-    <string name="help_txtv_help">Help \nIf you ever need help again use the question mark button highlighted below.</string>
-    <string name="help_txtv_about">About \nThis app calculates your final mark given all assessment\'s weightings and marks\n(either real or your estimate) \nThis application was created \nby Weylin Renison</string>
+    <string name="help_txtv_help">Help \nIf you ever need help again use the question mark button.</string>
+    <string name="help_txtv_about">About \nThis app calculates your final mark given all assessment\'s weightings and marks\n(either real or your estimate) \nThis application was created \nby ToasTea Computing</string>
     <string name="result_sheet_heading">Result Sheet</string>
     <string name="help_title">Help</string>
     <string name="result_sheet_title">Results</string>
@@ -30,9 +30,12 @@
     <string name="mnui_del_txt">Delete Template</string>
     <string name="splash_img_logo_desc">App Logo</string>
     <string name="splash_img_app_name_desc">App Name</string>
-    <string name="splash_txtv_available_txt">Premuim version available on these app markets</string>
+    <string name="splash_txtv_available_txt">Premium version available on these app markets</string>
     <string name="splash_ibtn_amazon_desc">Amazon App Market</string>
     <string name="splash_ibtn_slideme_desc">Slide Me App Market</string>
     <string name="splash_ibtn_aptoid_desc">Aptoid App Market</string>
+    <string name="help_txtv_save">Save a Template\nCreate your template by adding assessments and their names and weightings. Next click the overflow menu button(3 little dots) in the top right corner. Next click Save Template and give it a name and click save. Now you have a template you can reuse.</string>
+    <string name="help_txtv_load">Load a Template\nTo load a template click the overflow menu button(3 little dots) in the top right corner. Next click Load Template and select one of your templates you have saved.</string>
+    <string name="help_txtv_del">Delete a Template\nClick on the overflow menu button(3 little dots) in the top right corner. Next click Delete Template and select a template you would like to delete. Be careful you won\'t be asked if you are sure you want to delete that template.</string>
 
 </resources>
